@@ -1,0 +1,194 @@
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #87cefa;
+}
+
+#main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px;
+}
+
+/* Top Section */
+#top-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+}
+
+#top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo Animation */
+@keyframes flip {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+#logo-img {
+  width: 100px;
+  height: auto;
+  animation: flip 3s linear infinite;
+}
+
+#logo-img:hover {
+  animation-play-state: paused;
+}
+
+/* Heading Section */
+#heading {
+  text-align: center;
+  flex: 1;
+}
+
+.wave-text {
+  font-size: 1.5rem;
+  color: red;
+  animation: wave 2s infinite ease-in-out;
+  white-space: normal;
+}
+
+/* Wave Effect Animation */
+@keyframes wave {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav li {
+  display: inline;
+}
+
+nav a {
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+}
+
+/* Middle Section Layout */
+#middle-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+/* Content and Welcome Columns */
+#middle, #Welcome {
+  flex: 1 1 400px;
+  box-sizing: border-box;
+}
+
+/* Welcome Slideshow */
+#Welcome {
+  padding: 10px;
+  border-radius: 5px;
+  color: greenyellow;
+  text-shadow: 1px 1px 2px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  text-align: center;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  background-size: cover;
+  background-position: center;
+  animation: slideshow 20s infinite;
+}
+
+/* Slideshow Animation */
+@keyframes slideshow {
+  0%   { background-image: url('image/image1.jpg'); }
+  25%  { background-image: url('image/image2.jpg'); }
+  50%  { background-image: url('image/image3.jpg'); }
+  75%  { background-image: url('image/image4.jpg'); }
+  100% { background-image: url('image/logo.jpg'); }
+}
+
+/* Birthday Celebrant Override (optional) */
+.birthday-celebrant {
+  background-image: none !important;
+  background-color: black;
+  color: yellow;
+  flex-direction: column;
+}
+
+.birthday-celebrant img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+  animation: bounce 2s infinite;
+  border-radius: 50%;
+  box-shadow: 0 0 10px white;
+}
+
+/* Bounce Animation for Celebrant Image */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #top-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #heading h2 {
+    font-size: 1.2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #middle-section {
+    flex-direction: column;
+  }
+
+  #Welcome {
+    order: -1;
+  }
+}
+#show-members-btn {
+  background-color: #004080;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+#show-members-btn:hover {
+  background-color: #0066cc;
+}
+
+
+
